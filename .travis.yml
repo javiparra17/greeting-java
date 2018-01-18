@@ -1,0 +1,24 @@
+language: java
+
+jdk:
+  - openjdk7
+  - oraclejdk8
+
+
+notifications:
+  email:
+    recipients:
+      - javierparraoyola619@hotmail.com
+    on_success: never
+    on_failure: never
+
+before_install:
+  - mkdir target
+  - cd target
+  - mkdir dependency
+  - cd dependency
+  - curl webapp-runner.jar
+
+script: 
+  - java -jar webapp-runner.jar
+  - java -jar miwar-1.0.0.war
