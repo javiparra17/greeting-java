@@ -18,7 +18,11 @@ before_install:
   - mkdir dependency
   - cd dependency
   - curl webapp-runner.jar
+  - cd ..
+  - cd ..
 
 script: 
-  - java -jar webapp-runner.jar
-  - java -jar miwar-1.0.0.war
+  - cd target
+  - cd dependency
+  - jar cvf aplication.war
+  - java -jar webapp-runner.jar aplication.war
